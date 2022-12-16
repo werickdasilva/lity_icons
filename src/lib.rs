@@ -13,6 +13,26 @@ pub struct Icon {
     color: Color,
 }
 
+impl Icon {
+    pub fn new(icon: IconData) -> Self {
+        Self {
+            icon,
+            size: IconSize::Size24,
+            color: Color::rgb8(173, 216, 230),
+        }
+    }
+
+    pub fn set_color(mut self, color: Color) -> Self {
+        self.color = color;
+        self
+    }
+
+    pub fn set_size(mut self, size: IconSize) -> Self {
+        self.size = size;
+        self
+    }
+}
+
 impl<T: Data> Widget<T> for Icon {
     fn event(
         &mut self,
