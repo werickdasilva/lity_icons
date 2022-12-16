@@ -1,6 +1,6 @@
-use druid::PaintCtx;
+use druid::{Color, PaintCtx};
 
-type FunctionPaint = fn(&mut PaintCtx);
+type FunctionPaint = fn(&mut PaintCtx, &Color);
 
 pub struct IconData {
     pub paint: FunctionPaint,

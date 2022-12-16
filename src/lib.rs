@@ -1,13 +1,16 @@
 mod icon_data;
 mod icon_size;
+mod icons;
 
-use druid::{Data, Widget};
+use druid::{Color, Data, Widget};
 pub use icon_data::IconData;
 pub use icon_size::IconSize;
+pub use icons::*;
 
 pub struct Icon {
     icon: IconData,
     size: IconSize,
+    color: Color,
 }
 
 impl<T: Data> Widget<T> for Icon {
@@ -43,6 +46,6 @@ impl<T: Data> Widget<T> for Icon {
     }
 
     fn paint(&mut self, ctx: &mut druid::PaintCtx, _data: &T, _env: &druid::Env) {
-        (self.icon.paint)(ctx);
+        (self.icon.paint)(ctx, &self.color);
     }
 }
