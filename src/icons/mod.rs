@@ -12,10 +12,8 @@ impl Icons {
             let half_the_width_of_the_line = line_width / 2.;
             let center_position = size / 2.;
 
-            let curved_line_to_top = Line::new(
-                (0., center_position),
-                (center_position + line_width, 0.0),
-            );
+            let curved_line_to_top =
+                Line::new((0., center_position), (center_position + line_width, 0.0));
             let curved_line_to_bottom = Line::new(
                 (0.0, center_position - half_the_width_of_the_line),
                 (center_position + line_width, size),
@@ -34,7 +32,7 @@ impl Icons {
     pub const CLOSE: IconData = IconData {
         paint: |ctx, color| {
             let size = ctx.size().width;
-            let line_width = 3.;
+            let line_width = 2.;
             let line_one = Line::new((0., 0.), (size, size));
             let line_two = Line::new((0., size), (size, 0.));
 
@@ -46,8 +44,8 @@ impl Icons {
     pub const MENU: IconData = IconData {
         paint: |ctx, color| {
             let size = ctx.size().width;
-            let tree_line = 3.;
-            let line_width = 3.;
+            let tree_line = 2.;
+            let line_width = 2.;
 
             let current_size_of_all_rows = tree_line * line_width;
             let free_size = size - current_size_of_all_rows;
