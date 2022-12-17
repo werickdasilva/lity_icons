@@ -1,4 +1,4 @@
-use druid::{kurbo::Line, Color, RenderContext};
+use druid::{kurbo::Line, RenderContext};
 
 use crate::IconData;
 
